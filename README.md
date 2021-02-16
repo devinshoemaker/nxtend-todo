@@ -8,6 +8,9 @@
 
 ## Features
 
+- App build with Ionic React in an Nx workspace
+- Storybook used to render components in isolation
+
 ## Install
 
 ```sh
