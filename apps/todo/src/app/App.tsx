@@ -14,10 +14,10 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/typography.css';
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
+import HomePage from '../home/components/home-page/HomePage';
 import Menu from './components/Menu';
-import Page from './pages/Page';
 /* Theme variables */
 import './theme/variables.css';
 
@@ -28,8 +28,10 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Switch>
+              <Route path="/home" component={HomePage} exact />
+              <Redirect to="/home" />
+            </Switch>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

@@ -11,6 +11,9 @@
 - App build with Ionic React in an Nx workspace
 - Storybook used to render components in isolation
 - Tailwind CSS for additional styling
+- Unit tests with Jest
+- e2e tests with Cypress
+- GitHub Actions for CI/CD
 
 ## Install
 

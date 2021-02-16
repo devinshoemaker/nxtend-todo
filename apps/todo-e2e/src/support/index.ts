@@ -15,3 +15,5 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
+
+export const BASE_URL = 'http://localhost:4200';
