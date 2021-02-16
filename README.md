@@ -14,23 +14,54 @@
 - Unit tests with Jest
 - e2e tests with Cypress
 - GitHub Actions for CI/CD
+- Firebase for the backend with emulators for local development anc CI/CD
 
 ## Install
+
+### Install application dependencies
 
 ```sh
 npm install
 ```
 
-## Usage
+### Install Nx CLI
 
 ```sh
-npm run start
+npm install -g nx
+```
+
+### Install Firebase CLI
+
+```sh
+npm install -g firebase-tools
+```
+
+## Usage
+
+### Local development against emulators
+
+```sh
+nx emulators-start & nx serve
+```
+
+### Production development against Firebase
+
+```sh
+nx serve:prod
 ```
 
 ## Run tests
 
+### Unit tests
+
 ```sh
-npm run test
+nx test
+```
+
+### e2e tests
+
+```sh
+nx e2e todo-e2e
 ```
 
 ## Author
