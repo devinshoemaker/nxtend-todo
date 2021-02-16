@@ -10,6 +10,7 @@
 
 - App build with Ionic React in an Nx workspace
 - Storybook used to render components in isolation
+- Tailwind CSS for additional styling
 
 ## Install
 
