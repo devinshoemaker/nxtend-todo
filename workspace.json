@@ -180,6 +180,19 @@
               "quiet": true
             }
           }
+        },
+        "firebase": {
+          "executor": "@nxtend/firebase:firebase",
+          "options": {
+            "cmd": "--help"
+          }
+        },
+        "emulators-start": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "apps/todo",
+            "command": "firebase emulators:start --import=.firebase/export/ --export-on-exit"
+          }
         }
       }
     },
