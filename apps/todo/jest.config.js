@@ -10,4 +10,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/todo',
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
 };

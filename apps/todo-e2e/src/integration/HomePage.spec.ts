@@ -1,7 +1,10 @@
 import { BASE_URL } from '../support';
 
 describe('HomePage', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => {
+    cy.createUser();
+    cy.visit('/home');
+  });
 
   it('should display welcome message', () => {
     cy.visit('/');

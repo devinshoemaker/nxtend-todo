@@ -14,6 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import '@testing-library/cypress/add-commands';
 import './commands';
 
 export const BASE_URL = 'http://localhost:4200';

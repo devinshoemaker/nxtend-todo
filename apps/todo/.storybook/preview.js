@@ -14,6 +14,7 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/typography.css';
 import { withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
+import 'tailwindcss/tailwind.css';
 /* Theme variables */
 import '../src/app/theme/variables.css';
 
