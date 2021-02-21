@@ -9,7 +9,7 @@ import {
 } from '@ionic/react';
 import React from 'react';
 
-const Page: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -32,4 +32,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default HomePage;

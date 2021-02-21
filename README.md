@@ -9,12 +9,12 @@
 ## Features
 
 - App build with Ionic React in an Nx workspace
-- Storybook used to render components in isolation
+- Storybook to render components in isolation
 - Tailwind CSS for additional styling
-- Unit tests with Jest
-- e2e tests with Cypress
+- Unit tests with Jest and @testing-library/react
+- e2e tests with Cypress and @testing-library/cypress
 - GitHub Actions for CI/CD
-- Firebase for the backend with emulators for local development anc CI/CD
+- Firebase for authentication with emulators for local development and CI/CD
 
 ## Install
 
@@ -26,11 +26,15 @@ npm install
 
 ### Install Nx CLI
 
+While the Nx CLI is not mandatory for this project, it's highly recommended. If you do not want to install the Nx CLI globally on your system then you will need to preface all Nx commands with `npx`. e.g. `npx nx build`.
+
 ```sh
 npm install -g nx
 ```
 
 ### Install Firebase CLI
+
+The Firebase CLI is required for running the application against a local instance of Firebase, as well as e2e tests.
 
 ```sh
 npm install -g firebase-tools
@@ -40,11 +44,16 @@ npm install -g firebase-tools
 
 ### Local development against emulators
 
+To run the application against a local Firebase instance (recommended for testing and development) you need execute two different commands in two different terminal sessions. The first command starts the Firebase emulators, and the second command starts the application development server.
+
 ```sh
-nx emulators-start & nx serve
+nx emulators-start
+nx serve
 ```
 
 ### Production development against Firebase
+
+To run the application against the production instance of Firebase, execute:
 
 ```sh
 nx serve:prod
@@ -54,13 +63,18 @@ nx serve:prod
 
 ### Unit tests
 
+To run unit tests with Jest, execute:
+
 ```sh
 nx test
 ```
 
 ### e2e tests
 
+To run e2e tests with Cypress, execute:
+
 ```sh
+nx emulators-start
 nx e2e todo-e2e
 ```
 

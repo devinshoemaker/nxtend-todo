@@ -1,5 +1,3 @@
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/display.css';
@@ -14,29 +12,16 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/typography.css';
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
-import HomePage from '../home/components/home-page/HomePage';
-import Menu from './components/Menu';
+import { useAuthenticated } from '../auth/hooks/auth';
+import AuthenticatedApp from './components/authenticated-app/AuthenticatedApp';
+import UnauthenticatedApp from './components/unauthenticated-app/UnauthenticatedApp';
 /* Theme variables */
 import './theme/variables.css';
 
 const App: React.FC = () => {
-  return (
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Switch>
-              <Route path="/home" component={HomePage} exact />
-              <Redirect to="/home" />
-            </Switch>
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
-  );
+  const authenticated = useAuthenticated();
+  return authenticated ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };
 
 export default App;
